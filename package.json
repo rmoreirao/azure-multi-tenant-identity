@@ -1,0 +1,22 @@
+{
+  "name": "kanban-poc",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": ["client"],
+  "packageManager": "npm@11.19.1",
+  "engines": {
+    "node": ">=24.22.1 <25",
+    "npm": ">=11.19.1 <12"
+  },
+  "scripts": {
+    "build": "npm run build --workspace @kanban/client",
+    "typecheck": "npm run typecheck --workspace @kanban/client",
+    "lint": "biome check client",
+    "format": "biome check --write client",
+    "generate:api": "openapi-typescript docs\\contracts\\openapi.json -o client\\src\\generated\\api.d.ts"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.5.15",
+    "openapi-typescript": "7.13.0"
+  }
+}

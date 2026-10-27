@@ -1,0 +1,19 @@
+# Local configuration may contain credentials.
+.env
+.env.*
+!.env.example
+
+.tools/
+**/bin/
+**/obj/
+node_modules/
+client/dist/
+src/Kanban.Web/wwwroot/
+artifacts/
+TestResults/
+*.user
+*.suo
+.vs/
+.playwright/
+.playwright-cli/
+playwright/.auth/

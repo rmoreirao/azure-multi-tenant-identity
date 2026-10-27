@@ -1,0 +1,348 @@
+{
+  "type": "excalidraw",
+  "version": 2,
+  "source": "github-copilot",
+  "elements": [
+    {
+      "id": "title", "type": "text",
+      "x": 60, "y": 20, "width": 1740, "height": 80,
+      "text": "B2B Kanban SaaS PoC - proposed deployment architecture",
+      "fontSize": 30, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "status", "type": "text",
+      "x": 60, "y": 110, "width": 1740, "height": 60,
+      "text": "Synthetic data only. Client compatibility, dependency/hosting verification, and real-data approval remain gated.",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "azure", "type": "rectangle",
+      "x": 60, "y": 500, "width": 1780, "height": 1180,
+      "strokeColor": "#0078D4", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 }
+    },
+    {
+      "id": "azure-label", "type": "text",
+      "x": 1250, "y": 530, "width": 550, "height": 110,
+      "text": "Azure application environment\nSweden Central where supported",
+      "fontSize": 22, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "app", "type": "rectangle",
+      "x": 100, "y": 650, "width": 1100, "height": 500,
+      "strokeColor": "#0078D4", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 }
+    },
+    {
+      "id": "app-label", "type": "text",
+      "x": 140, "y": 680, "width": 1020, "height": 70,
+      "text": "App Service Linux B1 | one instance | Always On",
+      "fontSize": 24, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "network", "type": "rectangle",
+      "x": 100, "y": 1260, "width": 1100, "height": 300,
+      "strokeColor": "#5C2D91", "backgroundColor": "transparent",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 }
+    },
+    {
+      "id": "network-label", "type": "text",
+      "x": 140, "y": 1280, "width": 1020, "height": 60,
+      "text": "Public SQL endpoint | TLS + Entra authentication | approved IP firewall rules",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "browser", "type": "rectangle",
+      "x": 100, "y": 220, "width": 360, "height": 160,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "browser-text" }]
+    },
+    {
+      "id": "browser-text", "type": "text", "containerId": "browser",
+      "x": 120, "y": 245, "width": 320, "height": 110,
+      "text": "Browser UI\nOIDC / secure BFF session",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "clients", "type": "rectangle",
+      "x": 600, "y": 220, "width": 540, "height": 160,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "clients-text" }]
+    },
+    {
+      "id": "clients-text", "type": "text", "containerId": "clients",
+      "x": 620, "y": 245, "width": 500, "height": 110,
+      "text": "Employee-delegated API / MCP clients\nVS Code / Copilot App / Claude Code",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "identity", "type": "rectangle",
+      "x": 1330, "y": 220, "width": 450, "height": 200,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "identity-text" }]
+    },
+    {
+      "id": "identity-text", "type": "text", "containerId": "identity",
+      "x": 1350, "y": 245, "width": 410, "height": 150,
+      "text": "Microsoft Entra External ID\nManaged authentication / token issuance\nIdentity geography reviewed separately",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "bff", "type": "rectangle",
+      "x": 140, "y": 780, "width": 280, "height": 140,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "bff-text" }]
+    },
+    {
+      "id": "bff-text", "type": "text", "containerId": "bff",
+      "x": 160, "y": 800, "width": 240, "height": 100,
+      "text": "Web UI\nSame-origin BFF",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "rest", "type": "rectangle",
+      "x": 510, "y": 780, "width": 280, "height": 140,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "rest-text" }]
+    },
+    {
+      "id": "rest-text", "type": "text", "containerId": "rest",
+      "x": 530, "y": 800, "width": 240, "height": 100,
+      "text": "REST API\n/api/v1",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "mcp", "type": "rectangle",
+      "x": 880, "y": 780, "width": 280, "height": 140,
+      "strokeColor": "#0078D4", "backgroundColor": "#CFE4FA",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "mcp-text" }]
+    },
+    {
+      "id": "mcp-text", "type": "text", "containerId": "mcp",
+      "x": 900, "y": 800, "width": 240, "height": 100,
+      "text": "Remote MCP\n/mcp",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "core", "type": "rectangle",
+      "x": 270, "y": 980, "width": 760, "height": 130,
+      "strokeColor": "#107C10", "backgroundColor": "#DFF6DD",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "core-text" }]
+    },
+    {
+      "id": "core-text", "type": "text", "containerId": "core",
+      "x": 290, "y": 995, "width": 720, "height": 100,
+      "text": "Shared application services and company / team authorization\nValidation | version checks | idempotency | transactional audit",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "vault", "type": "rectangle",
+      "x": 1330, "y": 780, "width": 450, "height": 160,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "vault-text" }]
+    },
+    {
+      "id": "vault-text", "type": "text", "containerId": "vault",
+      "x": 1350, "y": 805, "width": 410, "height": 110,
+      "text": "Azure Key Vault\nRequired application secrets only",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "monitoring", "type": "rectangle",
+      "x": 1330, "y": 1030, "width": 450, "height": 160,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "monitoring-text" }]
+    },
+    {
+      "id": "monitoring-text", "type": "text", "containerId": "monitoring",
+      "x": 1350, "y": 1055, "width": 410, "height": 110,
+      "text": "Application Insights / workspace\nMetadata, not task content or tokens",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "sql-connection", "type": "rectangle",
+      "x": 140, "y": 1370, "width": 280, "height": 140,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "sql-connection-text" }]
+    },
+    {
+      "id": "sql-connection-text", "type": "text", "containerId": "sql-connection",
+      "x": 160, "y": 1390, "width": 240, "height": 100,
+      "text": "TLS connection\nEntra authentication",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "sql-firewall", "type": "rectangle",
+      "x": 510, "y": 1370, "width": 280, "height": 140,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "sql-firewall-text" }]
+    },
+    {
+      "id": "sql-firewall-text", "type": "text", "containerId": "sql-firewall",
+      "x": 530, "y": 1390, "width": 240, "height": 100,
+      "text": "SQL firewall\nAllowlisted IPs",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "sql", "type": "rectangle",
+      "x": 880, "y": 1370, "width": 280, "height": 140,
+      "strokeColor": "#5C2D91", "backgroundColor": "#E8DAEF",
+      "fillStyle": "solid", "strokeWidth": 2, "roundness": { "type": 3 },
+      "boundElements": [{ "type": "text", "id": "sql-text" }]
+    },
+    {
+      "id": "sql-text", "type": "text", "containerId": "sql",
+      "x": 900, "y": 1390, "width": 240, "height": 100,
+      "text": "Azure SQL S0\nShared database / RLS",
+      "fontSize": 20, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "middle"
+    },
+    {
+      "id": "browser-app", "type": "arrow",
+      "x": 280, "y": 380, "width": 0, "height": 270,
+      "points": [[0, 0], [0, 270]],
+      "strokeColor": "#0078D4", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "browser-app-label", "type": "text",
+      "x": 100, "y": 420, "width": 160, "height": 60,
+      "text": "HTTPS / cookie",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "clients-app", "type": "arrow",
+      "x": 870, "y": 380, "width": 0, "height": 270,
+      "points": [[0, 0], [0, 270]],
+      "strokeColor": "#0078D4", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "clients-app-label", "type": "text",
+      "x": 900, "y": 420, "width": 310, "height": 110,
+      "text": "HTTPS / access token\nREST or MCP",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "clients-identity", "type": "arrow",
+      "x": 1140, "y": 300, "width": 190, "height": 0,
+      "points": [[0, 0], [190, 0]],
+      "strokeColor": "#5C2D91", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "clients-identity-label", "type": "text",
+      "x": 1150, "y": 225, "width": 170, "height": 60,
+      "text": "OAuth + PKCE",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "top"
+    },
+    {
+      "id": "bff-core", "type": "arrow",
+      "x": 280, "y": 920, "width": 160, "height": 60,
+      "points": [[0, 0], [160, 60]],
+      "strokeColor": "#107C10", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "rest-core", "type": "arrow",
+      "x": 650, "y": 920, "width": 0, "height": 60,
+      "points": [[0, 0], [0, 60]],
+      "strokeColor": "#107C10", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "mcp-core", "type": "arrow",
+      "x": 1020, "y": 920, "width": 160, "height": 60,
+      "points": [[0, 0], [-160, 60]],
+      "strokeColor": "#107C10", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "core-sql-connection", "type": "arrow",
+      "x": 280, "y": 1110, "width": 200, "height": 260,
+      "points": [[0, 0], [0, 100], [-200, 100], [-200, 240], [0, 240], [0, 260]],
+      "strokeColor": "#5C2D91", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "core-sql-connection-label", "type": "text",
+      "x": 310, "y": 1170, "width": 700, "height": 60,
+      "text": "Tenant-aware SQL operations / managed identity",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "connection-firewall", "type": "arrow",
+      "x": 420, "y": 1440, "width": 90, "height": 0,
+      "points": [[0, 0], [90, 0]],
+      "strokeColor": "#5C2D91", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "firewall-sql", "type": "arrow",
+      "x": 790, "y": 1440, "width": 90, "height": 0,
+      "points": [[0, 0], [90, 0]],
+      "strokeColor": "#5C2D91", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "app-vault", "type": "arrow",
+      "x": 1200, "y": 860, "width": 130, "height": 0,
+      "points": [[0, 0], [130, 0]],
+      "strokeColor": "#5C2D91", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "vault-edge-label", "type": "text",
+      "x": 1210, "y": 720, "width": 110, "height": 100,
+      "text": "Managed\nidentity",
+      "fontSize": 16, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "center", "verticalAlign": "top"
+    },
+    {
+      "id": "app-monitoring", "type": "arrow",
+      "x": 1200, "y": 1110, "width": 130, "height": 0,
+      "points": [[0, 0], [130, 0]],
+      "strokeColor": "#5C2D91", "strokeWidth": 2, "endArrowhead": "arrow"
+    },
+    {
+      "id": "boundary-note", "type": "text",
+      "x": 1240, "y": 1290, "width": 560, "height": 280,
+      "text": "Operational boundaries\nOne instance: restarts interrupt service.\nLocal development shares this SQL database.\nShared SQL: database-wide restore.\nNo server-side LLM or service accounts.\nAI-client processing is outside this boundary.",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    },
+    {
+      "id": "reference", "type": "text",
+      "x": 100, "y": 1590, "width": 1700, "height": 60,
+      "text": "Companion: kanban-saas-technical-design.md | OAuth client/provider feasibility must be demonstrated before claiming support.",
+      "fontSize": 18, "fontFamily": 2, "strokeColor": "#000000",
+      "textAlign": "left", "verticalAlign": "top"
+    }
+  ],
+  "appState": {
+    "viewBackgroundColor": "#ffffff",
+    "gridSize": 20
+  },
+  "files": {}
+}

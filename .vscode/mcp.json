@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "kanban-poc": {
+      "type": "http",
+      "url": "https://app-kanban-poc-2rza5wd265s3g.azurewebsites.net/mcp",
+      "oauth": {
+        "clientId": "3ba3ac84-6861-43c7-bca4-c292399356c1"
+      }
+    }
+  }
+}
